@@ -28,7 +28,7 @@
             <div class="register-form__heading">
                 <h2>login</h2>
             </div>
-            <form class="form" action="/admin" method="post" name="">
+            <form class="form" action="/login" method="post" name="">
                 @csrf
                 <div class="form__inner">
 
@@ -40,11 +40,11 @@
                             <div class="form__input--text">
                                 <input type="email" name="email" placeholder="例: test@example.com" value="{{ old('email') }}" />
                             </div>
-                            <!-- <div class="form__error">
+                            <div class="form__error">
                             @error('email')
                             {{ $message }}
                             @enderror
-                        </div> -->
+                        </div>
                         </div>
                     </div>
                     <div class="form__group">
@@ -55,11 +55,11 @@
                             <div class="form__input--text">
                                 <input type="password" name="password" placeholder="例: coachtech1106"  />
                             </div>
-                            <!-- <div class="form__error">
+                            <div class="form__error">
                             @error('password')
                             {{ $message }}
                             @enderror
-                        </div> -->
+                        </div>
                         </div>
                     </div>
                 </div>

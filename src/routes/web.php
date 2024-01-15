@@ -15,17 +15,14 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
+
 
 Route::get('/', [ContactController::class, 'index']);
 Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/thanks', [ContactController::class, 'store']);
-Route::get('/index', [AuthController::class, 'index']);
+/*Route::get('/admin', [AuthController::class, 'index']);*/
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', [AuthController::class, 'index']);
+});
 
-Route::get('/index/search', [AuthController::class, 'search']);
-
-/*Route::middleware('auth')->group(function () {
-    Route::get('/', [AuthController::class, 'index']);
-    });*/
+Route::get('/admin/search', [AuthController::class, 'search']);

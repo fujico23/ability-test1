@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <form class="search-form" action="/index/search" method="get">
+        <form class="search-form" action="/admin/search" method="get">
             @csrf
             <div class="search-form__inner">
                 <div class="search-form__item">
@@ -56,7 +56,7 @@
                         @endforeach
                     </select>
                     <label class="search-form__item-date">
-                        <input type="date" min="1980-04-01" max="2050-04-01" value="{{ old('created_at') }}" name=" $contacts[created_at]"></input>
+                        <input type="date" min="1980-04-01" max="2050-04-01" value="{{ old('created_at') }}" name="created_at" placeholder="日付を選択してください"></input>
                     </label>
                 </div>
 
@@ -80,6 +80,7 @@
                                 <span class="contact-table__header-span">お問い合わせの種類</span>
                                 <span class="contact-table__header-span"> </span>
                             </th>
+
                         </tr>
                         @foreach ($contacts as $contact)
                         <!-- <form class="contact-form" action="" method="post"> -->
@@ -99,12 +100,13 @@
                                     <p class="contact-form__item-p contact-form__item-content">{{ $contact->category['content'] }}</p>
                                 </div>
                                 <div class="contact-form__button">
-                                    <button class="contact-form__button-submit" type="submit">
+                                    <button onclick="openModel()" class="contact-form__button-submit" type="submit">
                                         詳細
                                     </button>
                                 </div>
                             </td>
                         </tr>
+
                         <!-- </form> -->
                         @endforeach
                     </table>
@@ -116,6 +118,7 @@
                 </div>
             </div>
         </form>
+
     </main>
 
 
