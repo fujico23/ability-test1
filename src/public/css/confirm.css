@@ -1,0 +1,106 @@
+.header {
+  border-bottom: #E9E8E8 1px solid;
+}
+
+.header__inner {
+  margin: 0 auto;
+  padding: 20px 15px;
+  max-width: 1230px;
+  text-align: center;
+}
+
+.header__logo {
+  color: #908071;
+  text-decoration: none;
+  font-size: 36px;
+  font-family: serif;
+  font-weight: bold;
+}
+
+h2 {
+  color: #908071;
+  font-family: serif;
+  font-size: 24px;
+}
+  .confirm__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+  }
+  
+  .confirm__heading {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .form {
+    margin: 0 auto;
+    width: 70%;
+  }
+  
+  .confirm-table {
+    border: 1px solid #ddd;
+  }
+  
+  .confirm-table__inner {
+    width: 100%;
+  }
+  
+  .confirm-table__header {
+    padding: 15px;
+    width: 30%;
+    border-bottom: 1px solid #ddd;
+    background: #BAA899;
+    color: #fff;
+    font-weight: bold;
+    font-family: serif;
+  }
+  
+  .confirm-table__text {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  .confirm-table__text-name {
+    display: flex;
+  }
+  .confirm-table__text input,
+  .confirm-table__text p {
+    width: 100%;
+    outline: none;
+    border: none;
+    color: #908071;
+  }
+  
+  .confirm-table__row:last-child .confirm-table__header,
+  .confirm-table__row:last-child .confirm-table__text {
+    border-bottom-width: 0;
+  }
+  .button__group {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
+  .form__button {
+    width: 80px;
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .form__button-submit {
+    padding: 5px;
+    width: 100%;
+    /*height: 30px;*/
+    border: none;
+    border-radius: 3px;
+    background: #BAA899;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .form__link {
+    margin-left: 20px;
+  }
+
+  .form__link-return {
+    color: #BAA899;
+  }
