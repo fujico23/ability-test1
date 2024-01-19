@@ -36,21 +36,12 @@ class ContactController extends Controller
    /* public function store(Request $request)
 {
     $contact = $request->only(['first_name', 'last_name', 'gender', 'email', 'tel1', 'tel2', 'tel3', 'tell', 'address', 'building', 'category_id', 'detail']);
-    $telNumber = $contact['tel1'].$contact['tel2'].$contact['tel3'];
+    $telNumber = $request['tel1'] . $request['tel2'] . $request['tel3'];
     $contact['tell'] = $telNumber;
     unset($contact['tel1'], $contact['tel2'], $contact['tel3']);
 
     Contact::create([
-        'first_name' => $contact['first_name'],
-        'last_name' => $contact['last_name'],
-        'gender' => $contact['gender'],
-        'email' => $contact['email'],
-        'tell' => $telNumber,
-        'address' => $contact['address'],
-        'building' => $contact['building'],
-        'category_id' => $contact['category_id'],
-        'detail' => $contact['detail'],
-    ]);
+        'first_name','last_name','gender','email','tell','address','building','category_id','detail',]);
 
     return view('thanks');
 }*/
@@ -58,7 +49,10 @@ class ContactController extends Controller
     public function store(Request $request)
     {
       $categories = Category::all();
-      $contact = $request->only(['first_name', 'last_name', 'gender', 'email', 'tell','address', 'building','category_id', 'detail']);
+      $contact = $request->only(['first_name', 'last_name', 'gender', 'email','tel1','tel2','tel3', 'tell','address', 'building','category_id', 'detail']);
+      $telNumber = $request['tel1'] . $request['tel2'] . $request['tel3'];
+      $contact['tell'] = $telNumber;
+      dd($contact['tell']);
       Contact::create($contact,$categories);
       return view('thanks');
     }

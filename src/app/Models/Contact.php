@@ -56,11 +56,11 @@ class Contact extends Model
             $query->where('category_id', $category_id);
         }
     }
-    /*public function scopeDateSearch($query, $created_at)
+    public function scopeDateSearch($query, $date)
     {
-        if(!empty($created_at)) {
-            $query->whereDate('created_at', '=' $created_at);
+        if(!empty($date)) {
+            $query->whereDate('created_at', $date);
         }
-    }*/
+    }
 
 }

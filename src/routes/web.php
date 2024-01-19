@@ -23,6 +23,9 @@ Route::post('/thanks', [ContactController::class, 'store']);
 /*Route::get('/admin', [AuthController::class, 'index']);*/
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AuthController::class, 'index']);
+    Route::get('/admin/search', [AuthController::class, 'search']);
+    Route::post('delete', [AuthController::class, 'destroy']);
+    Route::post('/export', [AuthController::class, 'export']);
 });
 
-Route::get('/admin/search', [AuthController::class, 'search']);
+/*Route::get('/admin/search', [AuthController::class, 'search']);*/

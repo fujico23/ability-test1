@@ -12,10 +12,11 @@ class AuthController extends Controller
 {
     public function index()
     {
-        $contacts = Contact::with('category')->get();
+        $contacts = Contact::with('category')->paginate(10);
         $categories = Category::all();
-        $contacts = Contact::orderByDesc('created_at')->paginate(10);
-        return view('index', compact('contacts', 'categories',));
+/*追加用：CSV読み込み用*/
+        $csvData = Contact::all();
+        return view('index', compact('contacts', 'categories', 'csvData'));
     }
 
     public function search(Request $request)
@@ -24,9 +25,9 @@ class AuthController extends Controller
             ->CategorySearch($request->category_id)
             ->KeywordSearch($request->keyword)
             ->GenderSearch($request->gender)
+            ->DateSearch($request->date)
             ->orderByDesc('created_at')
             ->paginate(10);
-    
         $categories = Category::all();
         return view('index', compact('contacts', 'categories'));
     }
